@@ -44,15 +44,12 @@
             padding: 2rem 0;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
 
         header h1 {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             font-size: 2.8em;
-            font-weight: 700;
-            letter-spacing: 1px;
         }
 
         header p {
@@ -72,13 +69,11 @@
             color: var(--gradient-start);
         }
 
-
         .section-title {
             text-align: center;
             font-family: 'Montserrat', sans-serif;
             font-size: 2.2em;
-            margin-top: 40px;
-            margin-bottom: 30px;
+            margin: 40px 0 30px;
             color: var(--dark-gray);
             position: relative;
         }
@@ -144,7 +139,6 @@
             animation-delay: 0.5s;
         }
 
-
         .project-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
@@ -176,8 +170,7 @@
         }
 
         .project-card h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
+            margin: 0 0 10px;
             font-family: 'Montserrat', sans-serif;
             color: var(--primary-color);
             font-size: 1.4em;
@@ -210,25 +203,128 @@
             margin-bottom: 5px;
         }
 
+        .project-card .project-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+        }
 
-        .project-card a.project-link {
+        .project-card a.btn,
+        .project-card button.btn-video {
+            flex-grow: 1;
             display: inline-block;
             background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
             color: var(--white);
-            padding: 10px 18px;
+            padding: 10px 15px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background-size 0.3s ease;
             text-align: center;
-            margin-top: auto;
             background-size: 100% 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
         }
 
-        .project-card a.project-link:hover {
+        .project-card a.btn:hover,
+        .project-card button.btn-video:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             background-size: 150% 150%;
+        }
+
+        .project-card a.btn-secondary {
+            background: var(--secondary-color);
+        }
+
+        .project-card a.btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: #1c1c1c;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: zoomIn 0.3s ease-out;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            color: #aaa;
+            position: absolute;
+            top: -10px;
+            right: -5px;
+            font-size: 35px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            background: var(--dark-gray);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--white);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #videoPlayerContainer {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            position: relative;
+            background-color: #000;
+        }
+
+        #videoPlayerContainer iframe,
+        #videoPlayerContainer video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         footer {
@@ -253,7 +349,6 @@
             text-decoration: underline;
         }
 
-
         @media (max-width: 768px) {
             .container {
                 width: 90%;
@@ -263,20 +358,8 @@
                 font-size: 2.2em;
             }
 
-            header p {
-                font-size: 1em;
-            }
-
-            .section-title {
-                font-size: 1.8em;
-            }
-
             .projects {
                 grid-template-columns: 1fr;
-            }
-
-            .project-card h3 {
-                font-size: 1.3em;
             }
         }
 
@@ -299,7 +382,7 @@
             <p>游戏开发作品集</p>
             <p class="contact-info">
                 邮箱: <a href="mailto:1352270353@qq.com">1352270353@qq.com</a> |
-                GitHub: <a href="https://github.com/noobGuaTai" target="_blank">noobGuaTai</a>
+                GitHub: <a href="https://github.com/noobGuaTai/" target="_blank">noobGuaTai</a>
             </p>
         </div>
     </header>
@@ -307,82 +390,160 @@
     <div class="container">
         <h2 class="section-title">我的项目</h2>
         <div class="projects">
-            <div class="project-card">
-                <div class="img-container">
-                    <img src="placeholder_take_together.jpg" alt="Take Together 游戏截图">
-                </div>
+            <!-- <div class="project-card">
+                <div class="img-container"><img src="image/TakeTogether.png" alt="Take Together"></div>
                 <div class="project-card-content">
                     <h3>《Take Together》</h3>
-                    <p>一款支持双人联机的类银河恶魔城游戏，包含程序化生成的关卡和多样的敌人AI。</p>
-                    <p class="tech-stack"><strong>技术栈:</strong> <span>Unity</span> <span>C#</span> <span>Mirror
-                            Networking</span></p>
-                    <a href="[你的Take Together项目链接]" class="project-link" target="_blank">查看项目</a>
+                    <p>支持双人联机的类银河恶魔城游戏，包含程序化生成的关卡和多样的敌人AI。</p>
+                    <div class="project-actions">
+                        <button class="btn-video"
+                            data-video-src="https://www.youtube.com/embed/VIDEO_ID_1_TAKE_TOGETHER"
+                            data-video-type="iframe">播放演示</button>
+                    </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="project-card">
-                <div class="img-container">
-                    <img src="placeholder_ai_arena.jpg" alt="AI竞技场 游戏截图">
-                </div>
+                <div class="img-container"><img src="image/AI竞技场.png" alt="AI竞技场"></div>
                 <div class="project-card-content">
                     <h3>《AI竞技场》</h3>
-                    <p>2D横版对战游戏，特色在于Unity客户端与外部Python AI模型通过Socket进行实时交互，驱动智能体对战。</p>
-                    <p class="tech-stack"><strong>技术栈:</strong> <span>Unity</span> <span>C#</span> <span>Python</span>
-                        <span>Socket</span>
-                    </p>
-                    <a href="[你的AI竞技场项目链接]" class="project-link" target="_blank">查看项目</a>
+                    <p>2D横版AI对战游戏，通过Socket实现Unity客户端与外部Python AI模型实时交互，实现智能体对战。</p>
+                    <div class="project-actions">
+                        <button class="btn-video" data-video-src="videos/AI竞技场.mp4"
+                            data-video-type="local">播放视频</button>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card">
-                <div class="img-container">
-                    <img src="placeholder_bubble_battle.jpg" alt="泡泡战斗艺术家 游戏截图">
-                </div>
+                <div class="img-container"><img src="image/BubbleBattleArtist.png" alt="泡泡战斗艺术家"></div>
                 <div class="project-card-content">
                     <h3>《泡泡战斗艺术家》</h3>
-                    <p>2D横版平台跳跃游戏，具有独特的泡泡生成与合并机制，并使用Addressables进行资源管理。</p>
-                    <p class="tech-stack"><strong>技术栈:</strong> <span>Unity</span> <span>C#</span>
-                        <span>Addressables</span>
-                    </p>
-                    <a href="[你的泡泡战斗艺术家项目链接]" class="project-link" target="_blank">查看项目</a>
+                    <p>2025 GlobalGameJam&2025开拓芯比赛项目<br>
+                        2D横版平台跳跃游戏，操控泡泡越过障碍，战胜敌人，达到终点</p>
+                    <div class="project-actions">
+                        <button class="btn-video"
+                            data-video-src="https://player.bilibili.com/player.html?isOutside=true&aid=113860455433625&bvid=BV1HjwHebEzQ&cid=27977450611&p=1"
+                            data-video-type="iframe">播放视频</button>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card">
-                <div class="img-container">
-                    <img src="placeholder_arpg_demo.jpg" alt="3D ARPG Demo 游戏截图">
-                </div>
+                <div class="img-container"><img src="image/美梦中学.png" alt="美梦中学"></div>
                 <div class="project-card-content">
-                    <h3>3D ARPG Demo (独立开发)</h3>
-                    <p>一款3D动作角色扮演游戏Demo，包含复杂的战斗系统、动态镜头、精细的角色动画和行为树驱动的敌人AI。</p>
-                    <p class="tech-stack"><strong>技术栈:</strong> <span>Unreal Engine</span> <span>C++/Blueprints</span>
-                        <span>Behavior Trees</span> <span>Sequencer</span>
+                    <h3>《美梦中学2024-2025年度秋季学期理综期末考试》</h3>
+
+                    <p>2024吉比特GameJam比赛项目<br>
+                        你是美梦中学一名高二即将升高三的学生。这天，在期末复习课上，你有一个朋友李华因为昨晚通宵游玩一款叫做“美梦中学2024-2025年度秋季学期理综期末考试”的弹幕射击游戏，而昏昏欲睡。你要进入梦中击败缠绕他（你）的梦魇，守护你朋友的美梦，让他（你）安眠到下课。
                     </p>
-                    <a href="[你的ARPG Demo项目链接]" class="project-link" target="_blank">查看项目</a>
+                    <div class="project-actions">
+                        <button class="btn-video"
+                            data-video-src="https://player.bilibili.com/player.html?isOutside=true&aid=113791450743451&bvid=BV1cMrhYPEDv&cid=27760331478&p=1"
+                            data-video-type="iframe">播放视频</button>
+                    </div>
                 </div>
             </div>
 
             <div class="project-card">
-                <div class="img-container">
-                    <img src="placeholder_sweet_dream.jpg" alt="美梦中学 游戏截图">
-                </div>
+                <div class="img-container"><img src="image/Next20S.png" alt="Next 20 S"></div>
                 <div class="project-card-content">
-                    <h3>《美梦中学》</h3>
-                    <p>一款2D俯视角弹幕射击游戏，特色在于可复用的状态机模板和事件驱动的UI系统。</p>
-                    <p class="tech-stack"><strong>技术栈:</strong> <span>Unity</span> <span>C#</span></p>
-                    <a href="[你的美梦中学项目链接]" class="project-link" target="_blank">查看项目</a>
+                    <h3>《Next 20 S》</h3>
+
+                    <p>2024CiGAGameJam比赛项目<br>
+                        类吸血鬼幸存者游戏，合理运用移动与射击，操控主角生存到最后</p>
+                    <div class="project-actions">
+                        <button class="btn-video"
+                            data-video-src="https://player.bilibili.com/player.html?isOutside=true&aid=112744384694337&bvid=BV1GchDePEsC&cid=500001608113282&p=1"
+                            data-video-type="iframe">播放视频</button>
+                    </div>
                 </div>
             </div>
+
+            <div class="project-card">
+                <div class="img-container"><img src="image/壹步之遥.png" alt="壹步之遥"></div>
+                <div class="project-card-content">
+
+                    <h3>《壹步之遥》</h3>
+                    <p>2025 萌芽GameJam比赛项目<br>
+                        玩家操纵的角色是一名身经百战盲人杀手，需要聆听脚步确定场景中各种人物的位置，为确定目标人物需要结合视觉以外的多重感官，利用环境与各种道具完成刺杀、劫持、营救、保护等艰难的任务</p>
+                    <div class="project-actions">
+                        <button class="btn-video" data-video-src="videos/壹步之遥.mp4"
+                            data-video-type="iframe">播放视频</button>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeVideoModal">&times;</span>
+            <div id="videoPlayerContainer">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+
+        </div>
+    </footer>
+
 
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        document.getElementById('lastUpdated').textContent = '2025年5月13日';
 
+
+        const videoModal = document.getElementById('videoModal');
+        const videoPlayerContainer = document.getElementById('videoPlayerContainer');
+        const closeVideoModalBtn = document.getElementById('closeVideoModal');
+        const videoButtons = document.querySelectorAll('.btn-video');
+
+        videoButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const videoSrc = button.getAttribute('data-video-src');
+                const videoType = button.getAttribute('data-video-type');
+                videoPlayerContainer.innerHTML = '';
+
+                if (videoType === 'iframe') {
+                    const iframe = document.createElement('iframe');
+                    iframe.setAttribute('src', videoSrc + (videoSrc.includes('youtube.com') ? '?autoplay=1' : '')); // Ensure YouTube autoplays
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+                    iframe.setAttribute('allowfullscreen', '');
+                    videoPlayerContainer.appendChild(iframe);
+                } else if (videoType === 'local') {
+                    const video = document.createElement('video');
+                    video.setAttribute('src', videoSrc);
+                    video.setAttribute('controls', '');
+                    video.setAttribute('autoplay', '');
+                    video.setAttribute('playsinline', '');
+                    videoPlayerContainer.appendChild(video);
+                }
+                videoModal.classList.add('active');
+            });
+        });
+
+        function closeModal() {
+            videoModal.classList.remove('active');
+            videoPlayerContainer.innerHTML = '';
+        }
+
+        closeVideoModalBtn.addEventListener('click', closeModal);
+
+        videoModal.addEventListener('click', (event) => {
+            if (event.target === videoModal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && videoModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
     </script>
-
 </body>
 
 </html>
