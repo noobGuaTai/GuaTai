@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>呱太 - 游戏作品集</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --primary-hover-color: #0056b3;
+            --secondary-color: #6c757d;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+            --white: #ffffff;
+            --text-color: #333;
+            --gradient-start: #6dd5ed;
+            --gradient-end: #2193b0;
+        }
+
+        body {
+            font-family: 'Open Sans', 'Arial', 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--light-gray) 0%, #e9ecef 100%);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        header {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        header .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        header .contact-info a:hover {
+            color: var(--gradient-start);
+        }
+
+
+        .section-title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2em;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            display: flex;
+            flex-direction: column;
+            animation: fadeInCard 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInCard {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .project-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .project-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .project-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .project-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-card .img-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            font-size: 1.4em;
+        }
+
+        .project-card p {
+            font-size: 0.95em;
+            margin-bottom: 12px;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .project-card .tech-stack {
+            font-size: 0.85em;
+            color: var(--secondary-color);
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+
+        .project-card .tech-stack strong {
+            color: var(--dark-gray);
+        }
+
+        .project-card .tech-stack span {
+            background-color: #e9ecef;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+
+        .project-card a.project-link {
+            display: inline-block;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            color: var(--white);
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-size 0.3s ease;
+            text-align: center;
+            margin-top: auto;
+            background-size: 100% 100%;
+        }
+
+        .project-card a.project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            background-size: 150% 150%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            background: var(--dark-gray);
+            color: #aaa;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: var(--gradient-start);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card h3 {
+                font-size: 1.3em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .project-card .img-container {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>呱太</h1>
+            <p>游戏开发作品集</p>
+            <p class="contact-info">
+                邮箱: <a href="mailto:1352270353@qq.com">1352270353@qq.com</a> |
+                GitHub: <a href="https://github.com/noobGuaTai" target="_blank">noobGuaTai</a>
+            </p>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">我的项目</h2>
+        <div class="projects">
+            <div class="project-card">
+                <div class="img-container">
+                    <img src="placeholder_take_together.jpg" alt="Take Together 游戏截图">
+                </div>
+                <div class="project-card-content">
+                    <h3>《Take Together》</h3>
+                    <p>一款支持双人联机的类银河恶魔城游戏，包含程序化生成的关卡和多样的敌人AI。</p>
+                    <p class="tech-stack"><strong>技术栈:</strong> <span>Unity</span> <span>C#</span> <span>Mirror
+                            Networking</span></p>
+                    <a href="[你的Take Together项目链接]" class="project-link" target="_blank">查看项目</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="img-container">
+                    <img src="placeholder_ai_arena.jpg" alt="AI竞技场 游戏截图">
+                </div>
+                <div class="project-card-content">
+                    <h3>《AI竞技场》</h3>
+                    <p>2D横版对战游戏，特色在于Unity客户端与外部Python AI模型通过Socket进行实时交互，驱动智能体对战。</p>
+                    <p class="tech-stack"><strong>技术栈:</strong> <span>Unity</span> <span>C#</span> <span>Python</span>
+                        <span>Socket</span>
+                    </p>
+                    <a href="[你的AI竞技场项目链接]" class="project-link" target="_blank">查看项目</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="img-container">
+                    <img src="placeholder_bubble_battle.jpg" alt="泡泡战斗艺术家 游戏截图">
+                </div>
+                <div class="project-card-content">
+                    <h3>《泡泡战斗艺术家》</h3>
+                    <p>2D横版平台跳跃游戏，具有独特的泡泡生成与合并机制，并使用Addressables进行资源管理。</p>
+                    <p class="tech-stack"><strong>技术栈:</strong> <span>Unity</span> <span>C#</span>
+                        <span>Addressables</span>
+                    </p>
+                    <a href="[你的泡泡战斗艺术家项目链接]" class="project-link" target="_blank">查看项目</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="img-container">
+                    <img src="placeholder_arpg_demo.jpg" alt="3D ARPG Demo 游戏截图">
+                </div>
+                <div class="project-card-content">
+                    <h3>3D ARPG Demo (独立开发)</h3>
+                    <p>一款3D动作角色扮演游戏Demo，包含复杂的战斗系统、动态镜头、精细的角色动画和行为树驱动的敌人AI。</p>
+                    <p class="tech-stack"><strong>技术栈:</strong> <span>Unreal Engine</span> <span>C++/Blueprints</span>
+                        <span>Behavior Trees</span> <span>Sequencer</span>
+                    </p>
+                    <a href="[你的ARPG Demo项目链接]" class="project-link" target="_blank">查看项目</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="img-container">
+                    <img src="placeholder_sweet_dream.jpg" alt="美梦中学 游戏截图">
+                </div>
+                <div class="project-card-content">
+                    <h3>《美梦中学》</h3>
+                    <p>一款2D俯视角弹幕射击游戏，特色在于可复用的状态机模板和事件驱动的UI系统。</p>
+                    <p class="tech-stack"><strong>技术栈:</strong> <span>Unity</span> <span>C#</span></p>
+                    <a href="[你的美梦中学项目链接]" class="project-link" target="_blank">查看项目</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('lastUpdated').textContent = '2025年5月13日';
+
+    </script>
+
+</body>
+
+</html>
