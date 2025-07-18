@@ -210,7 +210,8 @@
         }
 
         .project-card a.btn,
-        .project-card button.btn-video {
+        .project-card button.btn-video,
+        .project-card button.btn-gallery {
             flex-grow: 1;
             display: inline-block;
             background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
@@ -228,7 +229,8 @@
         }
 
         .project-card a.btn:hover,
-        .project-card button.btn-video:hover {
+        .project-card button.btn-video:hover,
+        .project-card button.btn-gallery:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             background-size: 150% 150%;
@@ -372,6 +374,32 @@
                 height: 180px;
             }
         }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
     </style>
 </head>
 
@@ -391,13 +419,29 @@
         <h2 class="section-title">我的项目</h2>
         <div class="projects">
             <div class="project-card">
-                <div class="img-container"><img src="image/TakeTogether.png" alt="Take Together"></div>
+                <div class="img-container"><img src="image/Wandering Code.png" alt="Wandering Code"></div>
                 <div class="project-card-content">
-                    <h3>《Take Together》</h3>
-                    <p>支持双人联机的类银河恶魔城游戏，包含程序化生成的关卡和多样的敌人AI。</p>
+
+                    <h3>《Wandering Code》</h3>
+                    <p>2025 CiGA GameJam比赛项目<br>
+                        半夜刚赶完论文后打开vscode后发现眼前熟悉的代码活了起来，于是我变身成黄豆人穿越到代码世界进行了一次奇幻冒险。</p>
                     <div class="project-actions">
-                        <button class="btn-video" data-video-src="videos/TakeTogether.mp4"
-                            data-video-type="iframe">播放演示</button>
+                        <button class="btn-video"
+                            data-video-src="https://player.bilibili.com/player.html?isOutside=true&aid=114767263958383&bvid=BV17U3wzmEFS&cid=30764172898&p=1"
+                            data-video-type="iframe">播放视频</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="img-container"><img src="image/BubbleBattleArtist.png" alt="泡泡战斗艺术家"></div>
+                <div class="project-card-content">
+                    <h3>《泡泡战斗艺术家》</h3>
+                    <p>2025 GlobalGameJam&2025开拓芯比赛项目<br>
+                        2D横版平台跳跃游戏，操控泡泡越过障碍，战胜敌人，达到终点</p>
+                    <div class="project-actions">
+                        <button class="btn-video" data-video-src="videos/泡泡战斗艺术家.mp4"
+                            data-video-type="iframe">播放视频</button>
                     </div>
                 </div>
             </div>
@@ -415,14 +459,14 @@
             </div>
 
             <div class="project-card">
-                <div class="img-container"><img src="image/BubbleBattleArtist.png" alt="泡泡战斗艺术家"></div>
+                <div class="img-container"><img src="image/壹步之遥.png" alt="壹步之遥"></div>
                 <div class="project-card-content">
-                    <h3>《泡泡战斗艺术家》</h3>
-                    <p>2025 GlobalGameJam&2025开拓芯比赛项目<br>
-                        2D横版平台跳跃游戏，操控泡泡越过障碍，战胜敌人，达到终点</p>
+
+                    <h3>《壹步之遥》</h3>
+                    <p>2025 萌芽GameJam比赛项目<br>
+                        玩家操纵的角色是一名身经百战盲人杀手，需要聆听脚步确定场景中各种人物的位置，为确定目标人物需要结合视觉以外的多重感官，利用环境与各种道具完成刺杀、劫持、营救、保护等艰难的任务</p>
                     <div class="project-actions">
-                        <button class="btn-video"
-                            data-video-src="https://player.bilibili.com/player.html?isOutside=true&aid=113860455433625&bvid=BV1HjwHebEzQ&cid=27977450611&p=1"
+                        <button class="btn-video" data-video-src="videos/壹步之遥.mp4"
                             data-video-type="iframe">播放视频</button>
                     </div>
                 </div>
@@ -460,20 +504,27 @@
             </div>
 
             <div class="project-card">
-                <div class="img-container"><img src="image/壹步之遥.png" alt="壹步之遥"></div>
+                <div class="img-container"><img src="image/TakeTogether.png" alt="Take Together"></div>
                 <div class="project-card-content">
-
-                    <h3>《壹步之遥》</h3>
-                    <p>2025 萌芽GameJam比赛项目<br>
-                        玩家操纵的角色是一名身经百战盲人杀手，需要聆听脚步确定场景中各种人物的位置，为确定目标人物需要结合视觉以外的多重感官，利用环境与各种道具完成刺杀、劫持、营救、保护等艰难的任务</p>
+                    <h3>《Take Together》</h3>
+                    <p>支持双人联机的类银河恶魔城游戏，包含程序化生成的关卡和多样的敌人AI。</p>
                     <div class="project-actions">
-                        <button class="btn-video" data-video-src="videos/壹步之遥.mp4"
-                            data-video-type="iframe">播放视频</button>
+                        <button class="btn-video" data-video-src="videos/TakeTogether.mp4"
+                            data-video-type="iframe">播放演示</button>
                     </div>
                 </div>
             </div>
 
-
+            <div class="project-card">
+                <div class="img-container"><img src="ue5/regulus.jpeg" alt="Image Gallery"></div>
+                <div class="project-card-content">
+                    <h3>UE5 卡通渲染</h3>
+                    <p>使用VRM4U、KawaiiPhysics插件实现。</p>
+                    <div class="project-actions">
+                        <button class="btn-gallery" data-images="ue5/regulus.jpeg">查看图片</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -484,6 +535,16 @@
             </div>
         </div>
     </div>
+
+    <div class="modal" id="galleryModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeGalleryModal">&times;</span>
+            <img src="" id="galleryImage" style="width: 100%; height: auto; max-height: 80vh; object-fit: contain;">
+            <a class="prev" id="prevImage">&#10094;</a>
+            <a class="next" id="nextImage">&#10095;</a>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
 
@@ -492,8 +553,6 @@
 
 
     <script>
-
-
         const videoModal = document.getElementById('videoModal');
         const videoPlayerContainer = document.getElementById('videoPlayerContainer');
         const closeVideoModalBtn = document.getElementById('closeVideoModal');
@@ -507,7 +566,7 @@
 
                 if (videoType === 'iframe') {
                     const iframe = document.createElement('iframe');
-                    iframe.setAttribute('src', videoSrc + (videoSrc.includes('youtube.com') ? '?autoplay=1' : '')); // Ensure YouTube autoplays
+                    iframe.setAttribute('src', videoSrc + (videoSrc.includes('youtube.com') ? '?autoplay=1' : ''));
                     iframe.setAttribute('frameborder', '0');
                     iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
                     iframe.setAttribute('allowfullscreen', '');
@@ -540,6 +599,68 @@
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape' && videoModal.classList.contains('active')) {
                 closeModal();
+            }
+        });
+
+        const galleryModal = document.getElementById('galleryModal');
+        const closeGalleryModalBtn = document.getElementById('closeGalleryModal');
+        const galleryImage = document.getElementById('galleryImage');
+        const prevImageBtn = document.getElementById('prevImage');
+        const nextImageBtn = document.getElementById('nextImage');
+        const galleryButtons = document.querySelectorAll('.btn-gallery');
+
+        let currentImageIndex = 0;
+        let images = [];
+
+        galleryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const imagesAttr = button.getAttribute('data-images');
+                images = imagesAttr.split(',');
+                currentImageIndex = 0;
+                updateGalleryImage();
+                galleryModal.classList.add('active');
+            });
+        });
+
+        function updateGalleryImage() {
+            galleryImage.src = images[currentImageIndex];
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateGalleryImage();
+        }
+
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateGalleryImage();
+        }
+
+        nextImageBtn.addEventListener('click', showNextImage);
+        prevImageBtn.addEventListener('click', showPrevImage);
+
+        function closeGalleryModal() {
+            galleryModal.classList.remove('active');
+        }
+
+        closeGalleryModalBtn.addEventListener('click', closeGalleryModal);
+
+        galleryModal.addEventListener('click', (event) => {
+            if (event.target === galleryModal) {
+                closeGalleryModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && galleryModal.classList.contains('active')) {
+                closeGalleryModal();
+            }
+            if (galleryModal.classList.contains('active')) {
+                if (event.key === 'ArrowRight') {
+                    showNextImage();
+                } else if (event.key === 'ArrowLeft') {
+                    showPrevImage();
+                }
             }
         });
     </script>
