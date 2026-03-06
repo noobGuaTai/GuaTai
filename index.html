@@ -93,6 +93,7 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             padding: 20px 0;
+            justify-items: center;
         }
 
         .project-card {
@@ -105,6 +106,8 @@
             flex-direction: column;
             animation: fadeInCard 0.5s ease-out forwards;
             opacity: 0;
+            width: 100%;
+            max-width: 400px;
         }
 
         @keyframes fadeInCard {
@@ -387,8 +390,13 @@
             font-weight: bold;
             font-size: 20px;
             transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
             user-select: none;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 0 3px 3px 0;
         }
 
         .next {
@@ -420,7 +428,7 @@
     <header>
         <div class="container">
             <h1>呱太</h1>
-            <p>游戏开发作品集</p>
+            <p>个人网站</p>
             <!-- <p><a href="张腾飞-游戏开发作品集.pptx" download>下载 游戏开发作品集 PPT展示</a></p> -->
             <p class="contact-info">
                 邮箱: <a href="mailto:1352270353@qq.com">1352270353@qq.com</a> |
@@ -430,7 +438,7 @@
     </header>
 
     <div class="container">
-        <h2 class="section-title">我的项目</h2>
+        <h2 class="section-title">游戏开发作品集</h2>
         <div class="projects">
             <div class="project-card">
                 <div class="img-container"><img src="image/BubbleBattleArtist.png" alt="泡泡战斗艺术家"></div>
@@ -554,6 +562,22 @@
                     <div class="project-actions">
                         <button class="btn-video" data-video-src="videos/TakeTogether.mp4"
                             data-video-type="iframe">播放视频</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">AI开发技能展示</h2>
+        <div class="projects">
+            <div class="project-card">
+                <div class="img-container"><img src="openclaw/QQ20260306-192847.png" alt="OpenClaw AI助手"></div>
+                <div class="project-card-content">
+                    <h3>OpenClaw AI助手</h3>
+                    <p>在云服务器上部署OpenClaw，在Telegram上实现了一个智能聊天机器人。通过Claude Code与Skill编写规范，编写了一个整理AI科技日报的Skill，并采用Cron定时任务每天上午9点自动生成科技日报。此外，使用IMAP授权码实现邮件总结功能，每晚自动总结所有未读邮件。</p>
+                    <div class="project-actions">
+                        <button class="btn-gallery" data-images="openclaw/QQ20260306-192847.png,openclaw/QQ20260306-192853.png,openclaw/QQ20260306-192941.png,openclaw/QQ20260306-193017.png">查看图片</button>
                     </div>
                 </div>
             </div>
