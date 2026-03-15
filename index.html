@@ -421,6 +421,105 @@
             text-decoration: underline;
             /* 鼠标悬停时显示下划线（可选） */
         }
+
+        .game-experience-content {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            line-height: 2;
+        }
+
+        .game-experience-content h3 {
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .game-experience-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .game-experience-content p {
+            color: #555;
+            font-size: 1.05em;
+            margin-bottom: 10px;
+        }
+
+        .game-experience-content p strong {
+            color: var(--dark-gray);
+            font-size: 1.1em;
+        }
+
+        .game-experience-content ul.game-list {
+            list-style: none;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .game-experience-content ul.game-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .game-experience-content ul.game-list li:last-child {
+            border-bottom: none;
+        }
+
+        .game-experience-content ul.game-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .game-experience-content .game-tags {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .game-experience-content .anime-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gradient-start);
+            line-height: 1.8;
+        }
+
+        .game-experience-content .game-divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            margin: 30px 0;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .game-experience-content {
+                padding: 25px;
+            }
+
+            .game-experience-content h3 {
+                font-size: 1.3em;
+            }
+
+            .game-experience-content p {
+                font-size: 1em;
+            }
+
+            .game-experience-content .game-tags,
+            .game-experience-content .anime-list {
+                padding: 12px;
+            }
+        }
     </style>
 </head>
 
@@ -603,6 +702,55 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">游戏经历</h2>
+        <div class="game-experience-content">
+            <h3>游戏类型 & 游玩时长</h3>
+
+            <p><strong>ARPG</strong></p>
+            <ul class="game-list">
+                <li>永劫无间 - 2500小时（多赛季三排无间修罗）</li>
+                <li>黑神话：悟空 - 40小时</li>
+                <li>匹诺曹的谎言 - 40小时</li>
+                <li>只狼 - 40小时</li>
+                <li>鬼泣5 - 15小时</li>
+            </ul>
+
+            <p><strong>FPS</strong></p>
+            <ul class="game-list">
+                <li>Apex英雄 - 1400小时（多赛季钻石）</li>
+                <li>守望先锋 - 600小时</li>
+                <li>战地一 - 200小时</li>
+                <li>The Finals - 10小时</li>
+            </ul>
+
+            <p><strong>二游</strong></p>
+            <p class="game-tags">鸣潮 · 重返未来：1999 · 崩坏3 · 原神 · 崩坏：星穹铁道 · 少女前线：云图计划 · 碧蓝档案 · 火影忍者手游</p>
+
+            <p><strong>3A单机</strong></p>
+            <ul class="game-list">
+                <li>荒野大镖客：救赎2 - 80小时</li>
+                <li>光与影：33号远征队 - 50小时</li>
+                <li>赛博朋克：2077 - 30小时</li>
+                <li>使命召唤现代战争三部曲</li>
+                <li>死亡搁浅 - 10小时</li>
+            </ul>
+
+            <p><strong>独立游戏</strong></p>
+            <p class="game-tags">东方冰之勇者记 · Guidus Zero · 新月纪元 · 致命公司 · Broforce · 人类一败涂地 · 火山的女儿 · 饥荒 · 东方异域见闻 · 黑暗世界：因与果 · 迷魅狩猎 · 卡牌少女不会受伤 · 我在地府打麻将 · 血之诗：月之蚀 · 亚路塔 · 炎姬 · 终极幸运之塔 · 无限机兵 · 见证者</p>
+
+            <hr class="game-divider">
+
+            <h3>二次元相关</h3>
+
+            <p><strong>看过的动漫</strong></p>
+            <p class="anime-list">超时空辉夜姬 · 魔法少女小圆 · 某科学的超电磁炮 · 魔法禁书目录 · 火影忍者 · 终将成为你 · 安达与岛村 · JOJO的奇妙冒险 · 辉夜大小姐想让我告白 · 工作细胞 · 未闻花名 · 天使降临到我身边 · 埃罗芒阿老师 · 狐妖小红娘 · 你的名字 · 天气之子 · 铃芽之旅</p>
+
+            <p><strong>音乐</strong></p>
+            <p>洛天依 10年老粉</p>
         </div>
     </div>
 
